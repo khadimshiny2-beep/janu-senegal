@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+  <defs>
+    <linearGradient id="cas-bg" x1="0" y1="0" x2="70%" y2="100%">
+      <stop offset="0" stop-color="#e4d5b6"/>
+      <stop offset=".55" stop-color="#cbb58d"/>
+      <stop offset="1" stop-color="#a98f66"/>
+    </linearGradient>
+    <pattern id="cas-bogo" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M0 20L20 4L40 20L60 4L80 20" fill="none" stroke="#2a2117" stroke-width="2"/>
+      <path d="M0 60L20 44L40 60L60 44L80 60" fill="none" stroke="#2a2117" stroke-width="2"/>
+      <path d="M20 20L20 44M60 20L60 44" stroke="#2a2117" stroke-width="1"/>
+      <circle cx="40" cy="32" r="3" fill="#2a2117"/>
+    </pattern>
+    <filter id="cas-soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+    <filter id="cas-grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".82" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".06"/></feComponentTransfer>
+    </filter>
+  </defs>
+
+  <rect width="800" height="1000" fill="url(#cas-bg)"/>
+  <rect width="800" height="1000" fill="url(#cas-bogo)" opacity=".4"/>
+  <ellipse cx="170" cy="210" rx="280" ry="260" fill="#f7ecd5" opacity=".5" filter="url(#cas-soft)"/>
+  <ellipse cx="660" cy="860" rx="280" ry="300" fill="#6b5433" opacity=".35" filter="url(#cas-soft)"/>
+  <ellipse cx="400" cy="816" rx="190" ry="17" fill="#2a2117" opacity=".35" filter="url(#cas-soft)"/>
+
+  <path d="M400 170C360 170 332 196 318 234C288 250 270 290 262 334C258 352 270 362 286 356L326 340L338 428L330 468L272 790L528 790L470 468L462 428L474 340L514 356C530 362 542 352 538 334C530 290 512 250 482 234C468 196 440 170 400 170Z"
+    fill="#241a10" stroke="#e8dcc2" stroke-width="1.6"/>
+  <g fill="none" stroke="#e8dcc2" stroke-width="1.2" opacity=".9">
+    <path d="M352 198L400 300L448 198"/>
+    <path d="M400 300C428 370 450 425 462 470"/>
+    <path d="M330 468L470 468"/>
+    <path d="M330 468L300 506"/>
+    <path d="M470 468L500 506"/>
+    <path d="M318 234C300 262 288 298 284 332"/>
+    <path d="M482 234C500 262 512 298 516 332"/>
+  </g>
+  <g fill="#e8dcc2" opacity=".9">
+    <circle cx="400" cy="322" r="2.4"/>
+    <circle cx="400" cy="352" r="2.4"/>
+    <circle cx="400" cy="382" r="2.4"/>
+  </g>
+
+  <rect width="800" height="1000" filter="url(#cas-grain)" opacity=".9"/>
+</svg>

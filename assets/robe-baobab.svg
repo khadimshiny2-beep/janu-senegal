@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+  <defs>
+    <linearGradient id="bao-bg" x1="0" y1="0" x2="75%" y2="100%">
+      <stop offset="0" stop-color="#260f0f"/>
+      <stop offset=".55" stop-color="#180a0a"/>
+      <stop offset="1" stop-color="#0b0505"/>
+    </linearGradient>
+    <pattern id="bao-basin" width="100" height="100" patternUnits="userSpaceOnUse">
+      <path d="M50 10L90 50L50 90L10 50Z" fill="none" stroke="#d5b062" stroke-width="1"/>
+      <circle cx="50" cy="50" r="14" fill="none" stroke="#d5b062" stroke-width=".9"/>
+      <path d="M50 36L50 64M36 50L64 50" stroke="#d5b062" stroke-width=".9"/>
+      <circle cx="0" cy="0" r="3" fill="#d5b062" opacity=".8"/>
+      <circle cx="100" cy="100" r="3" fill="#d5b062" opacity=".8"/>
+    </pattern>
+    <filter id="bao-soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+    <filter id="bao-grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".82" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".06"/></feComponentTransfer>
+    </filter>
+  </defs>
+
+  <rect width="800" height="1000" fill="url(#bao-bg)"/>
+  <rect width="800" height="1000" fill="url(#bao-basin)" opacity=".3"/>
+  <ellipse cx="610" cy="230" rx="300" ry="280" fill="#d5b062" opacity=".16" filter="url(#bao-soft)"/>
+  <ellipse cx="180" cy="860" rx="300" ry="300" fill="#7a2c22" opacity=".35" filter="url(#bao-soft)"/>
+  <ellipse cx="400" cy="924" rx="210" ry="18" fill="#000000" opacity=".5" filter="url(#bao-soft)"/>
+
+  <path d="M400 166C350 166 318 196 302 238C266 248 236 288 226 340C222 358 236 370 254 364L308 344L326 438L318 476L250 902L550 902L482 476L474 438L492 344L546 364C564 370 578 358 574 340C564 288 534 248 498 238C482 196 450 166 400 166Z"
+    fill="#0b0505" opacity=".86" stroke="#d5b062" stroke-width="1.7"/>
+  <g fill="none" stroke="#d5b062" stroke-width="1.2" opacity=".9">
+    <path d="M356 196C372 226 428 226 444 196"/>
+    <path d="M348 210C366 248 434 248 452 210"/>
+    <path d="M342 224C362 268 438 268 458 224"/>
+    <path d="M318 476L482 476"/>
+    <path d="M302 238C278 270 262 306 256 342"/>
+    <path d="M498 238C522 270 538 306 544 342"/>
+    <path d="M368 476C356 640 340 800 330 900"/>
+    <path d="M432 476C444 640 460 800 470 900"/>
+  </g>
+  <g fill="#d5b062" opacity=".9">
+    <circle cx="276" cy="360" r="2.2"/>
+    <circle cx="290" cy="372" r="2.2"/>
+    <circle cx="510" cy="360" r="2.2"/>
+    <circle cx="524" cy="372" r="2.2"/>
+    <circle cx="400" cy="452" r="2.6"/>
+  </g>
+
+  <rect width="800" height="1000" filter="url(#bao-grain)" opacity=".9"/>
+</svg>

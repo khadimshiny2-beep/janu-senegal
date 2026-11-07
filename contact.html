@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="Contacter l'atelier Janu à Dakar : commandes, tailles, robes sur mesure et rendez-vous. Nous répondons sous deux jours ouvrés.">
+  <meta name="theme-color" content="#0e0c09">
+  <title>Contact — Janu</title>
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip" href="#main">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="wrap header__inner">
+      <a class="wordmark" href="index.html" aria-label="Janu, accueil">Janu<span>.</span></a>
+
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="collection.html">Collection</a>
+        <a href="atelier.html">Atelier</a>
+        <a href="lookbook.html">Lookbook</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+
+      <div class="header__actions">
+        <a class="btn btn--ghost btn--sm" href="collection.html">La collection</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap page-head">
+      <p class="index">Contact</p>
+      <h1>Écrivons-<em>nous.</em></h1>
+      <p class="lede">Une question, une taille, une robe sur mesure ? L’atelier répond sous deux jours ouvrés.</p>
+    </div>
+
+    <section class="section section--tight wrap">
+      <div class="contact-grid">
+        <div data-reveal>
+          <ul class="info-list">
+            <li>
+              <span class="label">Email</span>
+              <a href="mailto:bonjour@janu.sn">bonjour@janu.sn</a>
+            </li>
+            <li>
+              <span class="label">WhatsApp</span>
+              <a href="https://wa.me/221770000000" target="_blank" rel="noopener noreferrer">+221 77 000 00 00</a>
+            </li>
+            <li>
+              <span class="label">Atelier</span>
+              <p>Médina, Dakar — Sénégal<br>Adresse exacte sur rendez-vous.</p>
+            </li>
+            <li>
+              <span class="label">Horaires</span>
+              <p>Lundi – samedi, 9h – 18h</p>
+            </li>
+          </ul>
+        </div>
+
+        <form class="form" id="order-form" novalidate data-reveal>
+          <div class="field">
+            <label for="nom">Votre nom</label>
+            <input id="nom" name="nom" type="text" autocomplete="name" required maxlength="80" placeholder="Awa Diop">
+          </div>
+
+          <div class="field">
+            <label for="email">Votre email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="vous@exemple.com">
+          </div>
+
+          <div class="field">
+            <label for="message">Votre message</label>
+            <textarea id="message" name="message" required maxlength="2000" placeholder="Je souhaite une robe sur mesure en wax…"></textarea>
+          </div>
+
+          <button class="btn btn--solid" type="submit">Envoyer le message</button>
+          <p class="form__note" id="order-note" role="status" aria-live="polite">Ce formulaire ouvre votre logiciel de messagerie — aucune donnée n’est stockée sur le site.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__top">
+        <div>
+          <p class="footer__wordmark" aria-hidden="true">Janu</p>
+          <p class="footer__tagline">Robes africaines, cousues à la main à Dakar.</p>
+        </div>
+
+        <div class="footer__cols">
+          <div class="footer__col">
+            <h3>Explorer</h3>
+            <a href="collection.html">Collection</a>
+            <a href="atelier.html">Atelier</a>
+            <a href="lookbook.html">Lookbook</a>
+            <a href="contact.html">Contact</a>
+            <a href="index.html#newsletter">La lettre</a>
+          </div>
+          <div class="footer__col">
+            <h3>Atelier</h3>
+            <a href="mailto:bonjour@janu.sn">bonjour@janu.sn</a>
+            <a href="https://wa.me/221770000000" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <p>Médina, Dakar<br>Sénégal</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 Janu — Dakar</p>
+        <p><a href="#top">Retour en haut</a></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

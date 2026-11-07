@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+  <defs>
+    <linearGradient id="ter-bg" x1="0" y1="0" x2="75%" y2="100%">
+      <stop offset="0" stop-color="#241a0c"/>
+      <stop offset=".55" stop-color="#171208"/>
+      <stop offset="1" stop-color="#0c0a06"/>
+    </linearGradient>
+    <pattern id="ter-wax" width="110" height="110" patternUnits="userSpaceOnUse" patternTransform="rotate(10)">
+      <path d="M55 8 L102 55 L55 102 L8 55 Z" fill="none" stroke="#d5b062" stroke-width="1"/>
+      <circle cx="55" cy="55" r="10" fill="none" stroke="#d5b062" stroke-width=".9"/>
+      <circle cx="55" cy="55" r="2.5" fill="#d5b062"/>
+      <circle cx="0" cy="0" r="3" fill="#d5b062" opacity=".8"/>
+      <circle cx="110" cy="110" r="3" fill="#d5b062" opacity=".8"/>
+    </pattern>
+    <filter id="ter-soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="58"/>
+    </filter>
+    <filter id="ter-grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".82" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".06"/></feComponentTransfer>
+    </filter>
+  </defs>
+
+  <rect width="800" height="1000" fill="url(#ter-bg)"/>
+  <rect width="800" height="1000" fill="url(#ter-wax)" opacity=".34"/>
+  <ellipse cx="600" cy="220" rx="300" ry="280" fill="#d5b062" opacity=".18" filter="url(#ter-soft)"/>
+  <ellipse cx="180" cy="840" rx="300" ry="300" fill="#8a5a20" opacity=".2" filter="url(#ter-soft)"/>
+  <ellipse cx="400" cy="924" rx="200" ry="18" fill="#000000" opacity=".5" filter="url(#ter-soft)"/>
+
+  <path d="M400 168C352 168 322 196 306 234C274 250 256 292 248 338C244 356 256 366 272 360L314 344L330 430L322 470L238 902L562 902L478 470L470 430L486 344L528 360C544 366 556 356 552 338C544 292 526 250 494 234C478 196 448 168 400 168Z"
+    fill="#0b0906" opacity=".85" stroke="#d5b062" stroke-width="1.7"/>
+  <g fill="none" stroke="#d5b062" stroke-width="1.2" opacity=".9">
+    <path d="M362 194C378 222 422 222 438 194"/>
+    <path d="M322 470L478 470"/>
+    <path d="M370 470C356 620 340 780 330 900"/>
+    <path d="M430 470C444 620 460 780 470 900"/>
+    <path d="M306 234C288 264 276 300 272 336"/>
+    <path d="M494 234C512 264 524 300 528 336"/>
+  </g>
+  <g fill="#d5b062" opacity=".85">
+    <circle cx="400" cy="250" r="2.4"/>
+    <circle cx="400" cy="292" r="2.4"/>
+    <circle cx="400" cy="334" r="2.4"/>
+    <circle cx="400" cy="376" r="2.4"/>
+    <circle cx="400" cy="418" r="2.4"/>
+  </g>
+
+  <rect width="800" height="1000" filter="url(#ter-grain)" opacity=".9"/>
+</svg>

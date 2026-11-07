@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+  <defs>
+    <linearGradient id="dor-bg" x1="0" y1="0" x2="70%" y2="100%">
+      <stop offset="0" stop-color="#2a1010"/>
+      <stop offset=".55" stop-color="#190a0a"/>
+      <stop offset="1" stop-color="#0a0505"/>
+    </linearGradient>
+    <filter id="dor-soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="45"/>
+    </filter>
+    <filter id="dor-grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".07"/></feComponentTransfer>
+    </filter>
+  </defs>
+
+  <rect width="800" height="1000" fill="url(#dor-bg)"/>
+  <ellipse cx="400" cy="480" rx="330" ry="330" fill="#d5b062" opacity=".14" filter="url(#dor-soft)"/>
+  <ellipse cx="120" cy="900" rx="260" ry="260" fill="#7a2c22" opacity=".3" filter="url(#dor-soft)"/>
+
+  <g fill="none" stroke="#d5b062" stroke-linecap="round">
+    <path d="M-40 760C180 640 320 520 520 420 660 350 760 300 860 270" stroke-width="1.4" opacity=".2"/>
+    <path d="M-40 840C200 710 360 590 560 490 700 420 790 380 860 350" stroke-width="1.2" opacity=".14"/>
+    <g opacity=".85">
+      <path d="M400 900C400 700 300 600 300 450 300 360 340 300 400 260 460 300 500 360 500 450 500 600 400 700 400 900" stroke-width="2"/>
+      <path d="M400 860C400 690 340 590 340 470 340 400 365 345 400 315 435 345 460 400 460 470 460 590 400 690 400 860" stroke-width="1.4"/>
+      <path d="M400 820C400 680 380 580 380 480 380 425 388 380 400 355" stroke-width="1.2"/>
+    </g>
+    <g stroke-width="2" stroke-dasharray="2 10" opacity=".9">
+      <path d="M250 520C300 430 350 390 400 380"/>
+      <path d="M550 520C500 430 450 390 400 380"/>
+      <path d="M280 640C330 540 365 500 400 490"/>
+      <path d="M520 640C470 540 435 500 400 490"/>
+    </g>
+    <g stroke-width="1.2" opacity=".55">
+      <path d="M190 700C240 610 320 560 400 540 480 560 560 610 610 700"/>
+      <path d="M160 780C220 670 310 610 400 590 490 610 580 670 640 780"/>
+    </g>
+  </g>
+
+  <g fill="#d5b062">
+    <circle cx="400" cy="400" r="4"/>
+    <circle cx="350" cy="430" r="2.5"/>
+    <circle cx="450" cy="430" r="2.5"/>
+    <circle cx="330" cy="490" r="2.5"/>
+    <circle cx="470" cy="490" r="2.5"/>
+    <circle cx="310" cy="550" r="2.5"/>
+    <circle cx="490" cy="550" r="2.5"/>
+    <circle cx="300" cy="610" r="2.5"/>
+    <circle cx="500" cy="610" r="2.5"/>
+  </g>
+
+  <rect width="800" height="1000" filter="url(#dor-grain)" opacity=".9"/>
+</svg>

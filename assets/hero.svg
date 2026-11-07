@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1150" width="900" height="1150">
+  <defs>
+    <linearGradient id="h-bg" x1="0" y1="0" x2="80%" y2="100%">
+      <stop offset="0" stop-color="#1c160d"/>
+      <stop offset=".55" stop-color="#12100b"/>
+      <stop offset="1" stop-color="#090806"/>
+    </linearGradient>
+    <pattern id="h-wax" width="130" height="130" patternUnits="userSpaceOnUse" patternTransform="rotate(12)">
+      <path d="M65 10 L120 65 L65 120 L10 65 Z" fill="none" stroke="#d5b062" stroke-width="1"/>
+      <circle cx="65" cy="65" r="11" fill="none" stroke="#d5b062" stroke-width=".9"/>
+      <circle cx="65" cy="65" r="2.5" fill="#d5b062"/>
+      <circle cx="0" cy="0" r="3" fill="#d5b062" opacity=".8"/>
+      <circle cx="130" cy="130" r="3" fill="#d5b062" opacity=".8"/>
+    </pattern>
+    <filter id="h-soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="70"/>
+    </filter>
+    <filter id="h-grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".06"/></feComponentTransfer>
+    </filter>
+  </defs>
+
+  <rect width="900" height="1150" fill="url(#h-bg)"/>
+  <rect width="900" height="1150" fill="url(#h-wax)" opacity=".28"/>
+  <ellipse cx="650" cy="250" rx="340" ry="320" fill="#d5b062" opacity=".16" filter="url(#h-soft)"/>
+  <ellipse cx="230" cy="920" rx="360" ry="340" fill="#8a5a20" opacity=".22" filter="url(#h-soft)"/>
+  <ellipse cx="450" cy="974" rx="210" ry="20" fill="#000000" opacity=".5" filter="url(#h-soft)"/>
+
+  <g transform="translate(50,26)">
+    <path d="M400 168C352 168 322 196 306 234C274 250 256 292 248 338C244 356 256 366 272 360L314 344L330 430L322 470L238 902L562 902L478 470L470 430L486 344L528 360C544 366 556 356 552 338C544 292 526 250 494 234C478 196 448 168 400 168Z"
+      fill="#0b0906" opacity=".82" stroke="#d5b062" stroke-width="1.6"/>
+    <g fill="none" stroke="#d5b062" stroke-width="1.2" opacity=".9">
+      <path d="M362 194C378 222 422 222 438 194"/>
+      <path d="M322 470L478 470"/>
+      <path d="M370 470C356 620 340 780 330 900"/>
+      <path d="M430 470C444 620 460 780 470 900"/>
+      <path d="M306 234C288 264 276 300 272 336"/>
+      <path d="M494 234C512 264 524 300 528 336"/>
+    </g>
+    <g fill="#d5b062" opacity=".8">
+      <circle cx="400" cy="244" r="2.5"/>
+      <circle cx="400" cy="286" r="2.5"/>
+      <circle cx="400" cy="328" r="2.5"/>
+      <circle cx="400" cy="370" r="2.5"/>
+      <circle cx="400" cy="412" r="2.5"/>
+    </g>
+  </g>
+
+  <rect width="900" height="1150" filter="url(#h-grain)" opacity=".9"/>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+  <defs>
+    <linearGradient id="ind-bg" x1="0" y1="0" x2="75%" y2="100%">
+      <stop offset="0" stop-color="#1a2740"/>
+      <stop offset=".55" stop-color="#101a2c"/>
+      <stop offset="1" stop-color="#070c16"/>
+    </linearGradient>
+    <pattern id="ind-motif" width="96" height="96" patternUnits="userSpaceOnUse" patternTransform="rotate(6)">
+      <path d="M48 4L92 48L48 92L4 48Z" fill="none" stroke="#cfd8e6" stroke-width="1"/>
+      <circle cx="48" cy="48" r="13" fill="none" stroke="#cfd8e6" stroke-width=".8"/>
+      <circle cx="48" cy="48" r="2.5" fill="#cfd8e6"/>
+      <circle cx="0" cy="0" r="2.5" fill="#cfd8e6"/>
+      <circle cx="96" cy="96" r="2.5" fill="#cfd8e6"/>
+    </pattern>
+    <filter id="ind-soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="55"/>
+    </filter>
+    <filter id="ind-grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".06"/></feComponentTransfer>
+    </filter>
+  </defs>
+
+  <rect width="800" height="1000" fill="url(#ind-bg)"/>
+  <rect width="800" height="1000" fill="url(#ind-motif)" opacity=".3"/>
+  <ellipse cx="610" cy="240" rx="300" ry="280" fill="#9fb4d4" opacity=".16" filter="url(#ind-soft)"/>
+  <ellipse cx="170" cy="860" rx="300" ry="300" fill="#20375a" opacity=".5" filter="url(#ind-soft)"/>
+
+  <g fill="none" stroke="#cfd8e6" stroke-linecap="round">
+    <path d="M-40 760C180 640 340 520 540 420 680 350 780 300 860 270" stroke-width="1.5" opacity=".24"/>
+    <path d="M-40 850C200 720 370 600 570 500 710 430 800 390 860 360" stroke-width="1.2" opacity=".18"/>
+    <path d="M-40 940C220 800 400 680 600 570 730 500 810 460 860 430" stroke-width="1" opacity=".12"/>
+    <path d="M120 1020C180 880 240 760 340 650 430 550 540 480 680 430" stroke-width="1.2" opacity=".16"/>
+  </g>
+
+  <rect width="800" height="1000" filter="url(#ind-grain)" opacity=".9"/>
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+  <defs>
+    <linearGradient id="sah-bg" x1="0" y1="0" x2="75%" y2="100%">
+      <stop offset="0" stop-color="#172033"/>
+      <stop offset=".55" stop-color="#101827"/>
+      <stop offset="1" stop-color="#080d16"/>
+    </linearGradient>
+    <pattern id="sah-indigo" width="72" height="72" patternUnits="userSpaceOnUse">
+      <path d="M36 0L72 36L36 72L0 36Z" fill="none" stroke="#cfd8e6" stroke-width=".8"/>
+      <circle cx="18" cy="18" r="2" fill="#cfd8e6"/>
+      <circle cx="54" cy="54" r="2" fill="#cfd8e6"/>
+    </pattern>
+    <filter id="sah-soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+    <filter id="sah-grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".82" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".06"/></feComponentTransfer>
+    </filter>
+  </defs>
+
+  <rect width="800" height="1000" fill="url(#sah-bg)"/>
+  <rect width="800" height="1000" fill="url(#sah-indigo)" opacity=".28"/>
+  <ellipse cx="620" cy="240" rx="300" ry="280" fill="#9fb4d4" opacity=".18" filter="url(#sah-soft)"/>
+  <ellipse cx="180" cy="850" rx="300" ry="300" fill="#1f3556" opacity=".5" filter="url(#sah-soft)"/>
+  <ellipse cx="400" cy="924" rx="190" ry="18" fill="#000000" opacity=".5" filter="url(#sah-soft)"/>
+
+  <path d="M400 176C364 176 338 200 326 234L294 330C288 348 298 360 314 354L344 342L340 458L344 902L456 902L460 458L456 342L486 354C502 360 512 348 506 330L474 234C462 200 436 176 400 176Z"
+    fill="#09101a" stroke="#cfd8e6" stroke-width="1.6"/>
+  <g fill="none" stroke="#cfd8e6" stroke-width="1.2" opacity=".85">
+    <path d="M368 182L368 214C384 226 416 226 432 214L432 182"/>
+    <path d="M400 226L400 902"/>
+    <path d="M340 458L460 458"/>
+    <path d="M344 780L344 902"/>
+    <path d="M456 780L456 902"/>
+  </g>
+  <g fill="#cfd8e6" opacity=".8">
+    <circle cx="400" cy="500" r="2.2"/>
+    <circle cx="400" cy="600" r="2.2"/>
+    <circle cx="400" cy="700" r="2.2"/>
+    <circle cx="400" cy="800" r="2.2"/>
+  </g>
+
+  <rect width="800" height="1000" filter="url(#sah-grain)" opacity=".9"/>
+</svg>
