@@ -1,0 +1,9 @@
+[
+  {
+    "label": "Start five-server",
+    "command": "npx",
+    "args": ["five-server", ".", "-p", "5500"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true
+  }
+]

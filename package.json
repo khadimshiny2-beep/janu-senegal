@@ -1,0 +1,26 @@
+{
+  "name": "janu-senegal",
+  "version": "1.0.0",
+  "description": "Site vitrine statique en HTML / CSS / JavaScript, sans framework, sans build, sans dépendance. Palette sombre (`#0e0c09`) avec accent or (`#d5b062`), textes en français.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "five-server ."
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khadimshiny2-beep/janu-senegal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/khadimshiny2-beep/janu-senegal/issues"
+  },
+  "homepage": "https://github.com/khadimshiny2-beep/janu-senegal#readme",
+  "devDependencies": {
+    "five-server": "^0.4.5"
+  }
+}
