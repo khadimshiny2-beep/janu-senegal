@@ -43,7 +43,7 @@ Toutes les pages publiques partagent le même en-tête, le même pied de page et
 | Adresse, email, téléphone | chercher `bonjour@janu.sn`, `+221 77 000 00 00` et `221770000000` dans les `.html` et `js/main.js` |
 | Newsletter | constante `SIGNUP_ENDPOINT` en bas de `js/main.js` |
 
-> Les coordonnées actuelles sont des **placeholders de démonstration** : `bonjour@janu.sn`, `+221 77 000 00 00`, WhatsApp `221770000000`, Médina / Dakar. Remplace-les avant toute mise en ligne.
+> Les coordonnées actuelles sont des **placeholders de démonstration** : `bonjour@janu.sn`, `+221 77 000 00 00`, WhatsApp `221770000000`, Liberté 5 / Dakar. Remplace-les avant toute mise en ligne.
 
 Quand tu branches la newsletter, autorise aussi le domaine du fournisseur dans `connect-src`, dans la balise CSP de `index.html` **et** dans `_headers`.
 
