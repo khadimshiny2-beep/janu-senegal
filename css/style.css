@@ -95,14 +95,21 @@ h1, h2 {
 }
 h1 { font-size: clamp(3.1rem, 7.6vw, 7rem); line-height: .9; letter-spacing: -.035em; }
 h2 { font-size: clamp(2.1rem, 4.6vw, 4rem); line-height: .98; }
-h3 { font-size: 1rem; font-weight: 600; letter-spacing: -.01em; }
+h3 { font-size: .95rem; font-weight: 600; letter-spacing: -.01em; }
+
+.card__desc, .piece__desc, .section__note, .collection-foot p, .footer__tagline, .principles p, .infos p, .info-list p, .info-list a {
+  font-family: var(--serif);
+  font-size: .98rem;
+  line-height: 1.7;
+}
 em { font-style: italic; color: var(--gold); }
 
 .lede {
-  font-size: clamp(1.02rem, 1.5vw, 1.22rem);
-  line-height: 1.6;
+  font-family: var(--serif);
+  font-size: clamp(.98rem, 1.2vw, 1.12rem);
+  line-height: 1.7;
   color: var(--text-soft);
-  max-width: 48ch;
+  max-width: 52ch;
 }
 
 /* Boutons */
@@ -173,7 +180,7 @@ em { font-style: italic; color: var(--gold); }
   text-transform: uppercase;
 }
 .wordmark span { color: var(--gold); }
-.wordmark img { height: 2.8rem; width: auto; display: block; }
+.wordmark img { height: 5rem; width: auto; display: block; }
 
 .nav { display: flex; gap: clamp(1.1rem, 2.6vw, 2.4rem); }
 .nav a {
@@ -365,9 +372,9 @@ em { font-style: italic; color: var(--gold); }
   border-top: 1px solid var(--line);
   font-size: .95rem;
 }
-.card__name { font-weight: 500; }
-.card__price { color: var(--gold); font-variant-numeric: tabular-nums; }
-.card__meta {
+.card__name { font-weight: 500; font-size: .98rem; }
+.card__price { color: var(--gold); font-variant-numeric: tabular-nums; font-size: .95rem; }
+.card__meta { font-family: var(--serif); font-size: .92rem; font-style: italic;
   display: block;
   margin-top: .2rem;
   font-size: .68rem;
@@ -425,41 +432,8 @@ em { font-style: italic; color: var(--gold); }
   color: var(--muted);
 }
 
-/* Lookbook */
-.lookbook {
-  position: relative;
-  display: grid;
-  align-items: end;
-  min-height: min(78vh, 42rem);
-  overflow: hidden;
-  background: var(--surface);
-  color: var(--text);
-}
-.lookbook img {
-  position: absolute;
-  inset: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-}
-.lookbook::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(255, 247, 250, 0) 20%, rgba(42, 27, 34, .55));
-}
-.lookbook__caption {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  gap: .7rem;
-  max-width: 40rem;
-  padding: clamp(1.5rem, 5vw, 4rem);
-  color: #fff;
-}
-.lookbook__caption p:last-of-type { color: rgba(255, 255, 255, .9); max-width: 42ch; }
-.lookbook__caption .link-arrow { margin-top: .5rem; }
 
-/* Galerie lookbook */
+/* Galerie */
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -862,4 +836,22 @@ body { background-size: 120% 120%, 120% 120%, 200% 200%; animation: bgshift 18s 
   .hero__media img,
   .page-head > * { animation: none; }
   .card__media img, .gallery img, .tissu img, .nav a::after, .btn, .card, .tissu, .gallery figure { transition: none; }
+}
+
+
+/* Galerie fiche produit */
+.piece__media { position: relative; }
+.piece__nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 2.4rem; height: 2.4rem; border-radius: 999px;
+  border: 1px solid var(--line-strong); background: rgba(255,253,253,.9);
+  cursor: pointer; font-size: 1.4rem; line-height: 1; color: var(--text);
+}
+.piece__nav--prev { left: .75rem; }
+.piece__nav--next { right: .75rem; }
+.piece__nav[hidden] { display: none; }
+.piece__count {
+  position: absolute; left: 50%; bottom: .75rem; transform: translateX(-50%);
+  margin: 0; padding: .2rem .6rem; border-radius: 999px;
+  background: rgba(255,253,253,.9); font-size: .7rem; letter-spacing: .08em;
 }

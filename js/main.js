@@ -65,27 +65,45 @@ if (dialog) {
   const piecePrice = document.getElementById('piece-price');
   const pieceDesc = document.getElementById('piece-desc');
   const pieceMail = document.getElementById('piece-mail');
+  const piecePrev = dialog.querySelector('[data-prev]');
+  const pieceNext = dialog.querySelector('[data-next]');
+  const pieceCount = document.getElementById('piece-count');
+  let gallery = [];
+  let index = 0;
+
+  const render = () => {
+    if (!gallery.length) return;
+    pieceImage.src = gallery[index];
+    if (pieceCount) pieceCount.textContent = gallery.length > 1 ? (index + 1) + ' / ' + gallery.length : '';
+    if (piecePrev) piecePrev.hidden = gallery.length < 2;
+    if (pieceNext) pieceNext.hidden = gallery.length < 2;
+  };
 
   document.querySelectorAll('[data-piece]').forEach((button) => {
     button.addEventListener('click', () => {
-      const { name, price, fibre, desc, img } = button.dataset;
+      const { name, price, fibre, desc, img, imgs } = button.dataset;
+      gallery = (imgs || img || '').split('|').map((s) => s.trim()).filter(Boolean);
+      index = 0;
 
-      pieceImage.src = img;
-      pieceImage.alt = name;
-      pieceFibre.textContent = fibre;
-      pieceTitle.textContent = name;
-      piecePrice.textContent = price;
-      pieceDesc.textContent = desc;
-      pieceMail.href = 'mailto:bonjour@janu.sn'
-        + '?subject=' + encodeURIComponent('Commande — ' + name)
+      pieceImage.alt = name || '';
+      pieceFibre.textContent = fibre || '';
+      pieceTitle.textContent = name || '';
+      piecePrice.textContent = price || '';
+      pieceDesc.textContent = desc || '';
+      pieceMail.href = 'mailto:Janu4u.fashion@gmail.com'
+        + '?subject=' + encodeURIComponent('Commande — ' + (name || 'Janu'))
         + '&body=' + encodeURIComponent(
-          'Bonjour Janu,\n\nJe souhaite commander la ' + name + ' (' + price + ').\n'
+          'Bonjour Janu,\n\nJe souhaite commander ' + (name || 'cette pièce') + (price ? ' (' + price + ')' : '') + '.\n'
           + 'Ma taille :\nMes mesures (buste / taille / hanches) :\n\nMerci.'
         );
 
+      render();
       dialog.showModal();
     });
   });
+
+  if (piecePrev) piecePrev.addEventListener('click', () => { index = (index - 1 + gallery.length) % gallery.length; render(); });
+  if (pieceNext) pieceNext.addEventListener('click', () => { index = (index + 1) % gallery.length; render(); });
 
   document.querySelectorAll('[data-close]').forEach((button) => {
     button.addEventListener('click', () => dialog.close());
@@ -119,7 +137,7 @@ if (signupForm) {
     }
 
     if (!SIGNUP_ENDPOINT) {
-      signupNote.textContent = 'L’inscription n’est pas encore branchée — écrivez à bonjour@janu.sn.';
+      signupNote.textContent = 'L’inscription n’est pas encore branchée — écrivez à Janu4u.fashion@gmail.com.';
       return;
     }
 
@@ -165,7 +183,7 @@ if (orderForm) {
 
     orderNote.textContent = 'Votre logiciel de messagerie va s’ouvrir…';
 
-    window.location.href = 'mailto:bonjour@janu.sn'
+    window.location.href = 'mailto:Janu4u.fashion@gmail.com'
       + '?subject=' + encodeURIComponent('Site Janu — message de ' + name)
       + '&body=' + encodeURIComponent(message + '\n\n— ' + name + '\n' + email);
   });

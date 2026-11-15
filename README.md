@@ -17,15 +17,14 @@ Un petit serveur local vaut mieux qu'un double-clic sur `index.html` : la CSP, l
 ## Structure
 
 ```
-index.html          Accueil : hero, 3 pièces, atelier, lookbook, newsletter
+index.html          Accueil : hero, 3 pièces, atelier, newsletter
 collection.html     Les 4 robes, prix en FCFA, fiche produit (dialog)
 atelier.html        Histoire, principes, tissus, infos pratiques
-lookbook.html       Galerie de 6 visuels
 contact.html        Coordonnées + formulaire (ouvre la messagerie)
 apprendre/          Mini-site pédagogique (React, Next.js, Tailwind, TypeScript, Convex)
 css/style.css       Tout le design, animations et responsive
 js/main.js          Menu mobile, apparitions au scroll, fiche produit, formulaires
-assets/*.svg        Visuels provisoires dessinés en SVG + favicon
+images/*           Visuels (photos JPG/PNG)
 _headers            En-têtes de sécurité (Netlify / Cloudflare Pages)
 ```
 
@@ -38,12 +37,12 @@ Toutes les pages publiques partagent le même en-tête, le même pied de page et
 | Couleurs, polices, espacements | variables `:root` en haut de `css/style.css` |
 | Textes | directement dans les `.html` |
 | Prix, noms, descriptions des robes | attributs `data-name`, `data-price`, `data-fibre`, `data-desc`, `data-img` des boutons `[data-piece]` |
-| Photos des robes | remplacer `assets/robe-teranga.svg`, `robe-casamance.svg`, `robe-sahel.svg`, `robe-baobab.svg` (portrait 4:5 conseillé, 1200×1500 px) |
-| Hero et lookbook | `assets/hero.svg`, `assets/lookbook.svg`, `assets/detail-*.svg` |
-| Adresse, email, téléphone | chercher `bonjour@janu.sn`, `+221 77 000 00 00` et `221770000000` dans les `.html` et `js/main.js` |
+| Photos des robes | remplacer les images dans `images/` (portrait 4:5 conseillé, 1200×1500 px) |
+| Hero / détails | images dans `images/` |
+| Adresse, email, téléphone | chercher `Janu4u.fashion@gmail.com`, `+221 77 800 86 46` et `221778008646` dans les `.html` et `js/main.js` |
 | Newsletter | constante `SIGNUP_ENDPOINT` en bas de `js/main.js` |
 
-> Les coordonnées actuelles sont des **placeholders de démonstration** : `bonjour@janu.sn`, `+221 77 000 00 00`, WhatsApp `221770000000`, Liberté 5 / Dakar. Remplace-les avant toute mise en ligne.
+> Les coordonnées actuelles sont des **placeholders de démonstration** : `Janu4u.fashion@gmail.com`, `+221 77 800 86 46`, WhatsApp `221778008646`, Liberté 5 / Dakar. Remplace-les avant toute mise en ligne.
 
 Quand tu branches la newsletter, autorise aussi le domaine du fournisseur dans `connect-src`, dans la balise CSP de `index.html` **et** dans `_headers`.
 
