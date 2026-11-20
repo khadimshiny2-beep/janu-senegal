@@ -71,9 +71,15 @@ if (dialog) {
   let gallery = [];
   let index = 0;
 
-  const render = () => {
+  const render = (dir = 0) => {
     if (!gallery.length) return;
     pieceImage.src = gallery[index];
+    if (dir) {
+      pieceImage.classList.remove('is-slide-next', 'is-slide-prev');
+      // relance l'animation
+      void pieceImage.offsetWidth;
+      pieceImage.classList.add(dir > 0 ? 'is-slide-next' : 'is-slide-prev');
+    }
     if (pieceCount) pieceCount.textContent = gallery.length > 1 ? (index + 1) + ' / ' + gallery.length : '';
     if (piecePrev) piecePrev.hidden = gallery.length < 2;
     if (pieceNext) pieceNext.hidden = gallery.length < 2;
@@ -84,6 +90,7 @@ if (dialog) {
       const { name, price, fibre, desc, img, imgs } = button.dataset;
       gallery = (imgs || img || '').split('|').map((s) => s.trim()).filter(Boolean);
       index = 0;
+      pieceImage.classList.remove('is-slide-next', 'is-slide-prev');
 
       pieceImage.alt = name || '';
       pieceFibre.textContent = fibre || '';
@@ -102,8 +109,14 @@ if (dialog) {
     });
   });
 
-  if (piecePrev) piecePrev.addEventListener('click', () => { index = (index - 1 + gallery.length) % gallery.length; render(); });
-  if (pieceNext) pieceNext.addEventListener('click', () => { index = (index + 1) % gallery.length; render(); });
+  if (piecePrev) piecePrev.addEventListener('click', () => {
+    index = (index - 1 + gallery.length) % gallery.length;
+    render(-1);
+  });
+  if (pieceNext) pieceNext.addEventListener('click', () => {
+    index = (index + 1) % gallery.length;
+    render(1);
+  });
 
   document.querySelectorAll('[data-close]').forEach((button) => {
     button.addEventListener('click', () => dialog.close());
