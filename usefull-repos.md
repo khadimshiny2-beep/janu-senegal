@@ -1,0 +1,3 @@
+- FreeDomain
+- FreeForDev
+- Awesome-SelfHosted
