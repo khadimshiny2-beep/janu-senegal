@@ -1,3 +1,4 @@
 - Ajout de commentaires
 - Barre de recherche
 - Systeme de compte et panier
+- Creation d'une newsletter
